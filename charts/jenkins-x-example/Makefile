@@ -30,7 +30,7 @@ release: clean
 	curl --fail -u $(CHARTMUSEUM_CREDS_USR):$(CHARTMUSEUM_CREDS_PSW) --data-binary "@$(NAME)-$(shell sed -n 's/^version: //p' Chart.yaml).tgz" $(CHART_REPO)/api/charts
 	rm -rf ${NAME}*.tgz%
 
-tag: 0.0.1
+tag:
 ifeq ($(OS),Darwin)
 	sed -i "" -e "s/version:.*/version: $(RELEASE_VERSION)/" Chart.yaml
 	sed -i "" -e "s/tag: .*/tag: $(RELEASE_VERSION)/" values.yaml
