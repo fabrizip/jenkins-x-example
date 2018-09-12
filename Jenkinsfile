@@ -70,7 +70,7 @@ pipeline {
           branch 'master'
         }
         steps {
-          dir ('./charts/patrizia') {
+          dir ('./charts/jenkins-x-example') {
             container('maven') {
               sh 'jx step changelog --version v\$(cat ../../VERSION)'
 
